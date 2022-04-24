@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private GameObject attackPoint;
+    [SerializeField] private GameObject hopeBullet;
+    [SerializeField] private float shootForce;
 
     void Start()
     {
@@ -19,11 +21,12 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetButtonDown("Mouse1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            print("atirei");
+            GameObject bullet = Instantiate(hopeBullet, attackPoint.transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.up * shootForce, ForceMode.Impulse);
         }
 
-        // Instantiate
+
     }
 }
