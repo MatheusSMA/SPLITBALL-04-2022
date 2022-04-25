@@ -5,24 +5,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //* references
-    private Rigidbody rb;
+    private Rigidbody _rb;
     //*
 
     [Header("Speed variables")]
-    [SerializeField] private float speed;
-    private float movX;
+    [SerializeField] private float _speed;
+    private float _movX;
 
 
     private void Awake()
     {
         GetReferences();
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         InputControls();
@@ -30,12 +24,12 @@ public class PlayerController : MonoBehaviour
 
     private void InputControls()
     {
-        movX = Input.GetAxis("Horizontal") * speed;
-        rb.velocity = new Vector3(movX, 0, 0);
+        _movX = Input.GetAxis("Horizontal") * _speed;
+        _rb.velocity = new Vector3(_movX, 0, 0);
     }
 
     private void GetReferences()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 }
