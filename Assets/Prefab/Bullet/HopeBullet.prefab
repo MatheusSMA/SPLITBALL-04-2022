@@ -53,7 +53,7 @@ MeshRenderer:
   m_GameObject: {fileID: 7967308054051404586}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -139,5 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b94aaea7d4a0d94a90b28136e8018da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sizeToGrowSize: 0.03
-  _sizeToGrowCenter: 0.05
+  _sizeToGrowSize: 1
+  _sizeToGrowCenter: -0.5

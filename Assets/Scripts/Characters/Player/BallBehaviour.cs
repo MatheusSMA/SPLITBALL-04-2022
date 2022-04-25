@@ -15,18 +15,18 @@ public class BallBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(0, -9.8f * velocityFactor, 0);
+        rb.AddForce(-1, -9.8f * velocityFactor, 0);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             print("player collision");
         }
-        if (collision.gameObject.CompareTag("Bullets"))
+        if (other.gameObject.CompareTag("Bullets"))
         {
             Destroy(gameObject);
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             print("shot");
         }
 

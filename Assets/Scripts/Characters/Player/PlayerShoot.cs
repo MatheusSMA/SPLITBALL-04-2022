@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject attackPoint;
     [SerializeField] private GameObject hopeBullet;
     [SerializeField] private float shootForce;
-
+    
     void Update()
     {
         Shoot();
