@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2744283066422516451}
   velocityFactor: 3
+  direction: 0
+  velocityDirection: 0
 --- !u!54 &2744283066422516451
 Rigidbody:
   m_ObjectHideFlags: 0
