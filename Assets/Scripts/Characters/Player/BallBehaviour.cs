@@ -5,8 +5,14 @@ using UnityEngine;
 public class BallBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
+    [Header("Speed")]
     [SerializeField] private float velocityFactor;// only applies to gravity for now
+    [Header("Direction")]
+    [Range(-1, 1)]
+    [SerializeField] private float direction;// direction to move
+    [SerializeField] private float velocityDirection;
+
     void Start()
     {
 
@@ -15,7 +21,7 @@ public class BallBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddForce(-1, -9.8f * velocityFactor, 0);
+        rb.AddForce(direction, -9.8f * velocityFactor, 0);
     }
     private void OnTriggerEnter(Collider other)
     {
